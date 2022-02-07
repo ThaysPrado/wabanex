@@ -1,5 +1,4 @@
 defmodule Wabanex.IMC do
-
   def calculate(%{"filename" => filename}) do
     filename
     |> File.read()
@@ -28,5 +27,5 @@ defmodule Wabanex.IMC do
     |> calculate_imc()
   end
 
-  defp calculate_imc([name, height, weight]), do: {name, weight/(height*height)}
+  defp calculate_imc([name, height, weight]), do: {name, weight / (height * height)}
 end
