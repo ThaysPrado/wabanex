@@ -14,4 +14,12 @@ defmodule WabanexWeb.Schema.Types.Root do
       # resolve fn params, context -> UserResolver.get(params, context) end
     end
   end
+
+  object :root_mutation do
+    field :create_user, type: :user do
+      arg(:input, non_null(:create_user_input))
+
+      resolve(&UserResolver.create/2)
+    end
+  end
 end
